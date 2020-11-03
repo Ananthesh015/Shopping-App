@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-// import { BrowserContainer, BrowserCard } from "../container/browser";
 import { Container, Card, Button, QntButton } from "../component/browser";
 interface ICart {
     ShopingCart: Array<any>;
-    // Quanty: number;
     TotalAmount: number;
     incRating: (id:number) => void;
     decRating: (id:number) => void;
@@ -13,53 +11,21 @@ interface ICart {
 export const Cart:React.FC<ICart> = ({ShopingCart, incRating, decRating, increaseqnt, decreaseqnt, TotalAmount, ...props}:ICart) => {
     console.log(ShopingCart)
     console.log(TotalAmount)
-    // console.log(Quanty)
-    // const [count, setcount] = useState(0)
-    // const [_, setRating] = useState([1])
-    // const [__, setQnt] = useState(0)
     const [editrating, seteditrating] = useState(false)
     useEffect(() => {
         console.log("componentDidmount")
-        // return () => {
-        //     console.log("componentWilunmount")
-        // }
     })
     const increaserating = (productrating:any) => {
-
-            // let newrating = productrating;
-            // newrating.push(1)
-            // setRating(newrating)
-            incRating && incRating(productrating)
-        
+            incRating && incRating(productrating)   
     }
     const decreaserating = (productrating:any) => {
-       
-            // let newrating = productrating;
-            // newrating.pop()
-            // setRating(newrating)
             decRating && decRating(productrating)
-        
     }
     const increaseproductqnt = (ProductId:any) => {
-        // setcount((count:number) => count = count+1)
-        // let Items:ICart | any= ShopingCart.find(item=> item.id === ProductId)
-        // Items.Qnt += 1;
-        // setQnt(Items.Qnt)
-        increaseqnt && increaseqnt(ProductId)
-        // console.log("addedItem",Items)
-        // handleaddtocart && handleaddtocart (ProductId)
-        // console.log(ProductId)
-        
+        increaseqnt && increaseqnt(ProductId)  
     }
     const decreaseproductqnt = (ProductId:any) => {
-        // setcount((count:number) => count = count-1)
-        // handleremovefromcart && handleremovefromcart(ProducttId)
-        // let Items:ICart | any= ShopingCart.find(item=> item.id === ProductId)
-        // Items.Qnt -= 1;
-        // setQnt(Items.Qnt)
-        decreaseqnt && decreaseqnt(ProductId)
-        // console.log("removeditem",Items)
-        
+        decreaseqnt && decreaseqnt(ProductId)  
     }
     return (
         <>

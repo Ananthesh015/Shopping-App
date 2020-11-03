@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Background, Container, Logo, Cart, CartIcon  } from "../component/header";
-import {Link, useHistory} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 interface IProps{
     children:any
@@ -28,14 +28,8 @@ export const HeaderLogo:React.FC<IProps & { }> = (props) => (
 );
 interface ICart {
     ShopingCart: Array<any>;
-    // Quanty: number;
-    
 }
 export const HeaderCart:React.FC<ICart> = ({ShopingCart}:ICart) => {
-    // console.log(ShopingCart)
-    // console.log(Quanty)
-    // let history = useHistory();
-    // const routetocartpage = () => { return history.push("/cart");}
     return (
     <Link to={"/cart"} style={{textDecoration:"none",color:"black"}}>
       <Cart>
