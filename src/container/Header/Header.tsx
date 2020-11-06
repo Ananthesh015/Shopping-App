@@ -1,6 +1,6 @@
 import React from 'react';
-import { Background, Container, Logo, Cart, CartIcon  } from "../component/header";
-import {Link} from "react-router-dom"
+import { Background, Container, Logo, Cart, CartIcon  } from "../../component/Header";
+import {BrowserRouter, Link} from "react-router-dom"
 
 interface IProps{
     children:any
@@ -29,15 +29,19 @@ export const HeaderLogo:React.FC<IProps & { }> = (props) => (
 interface ICart {
     ShopingCart: Array<any>;
 }
+export const TextId = 'Text-test';
+
 export const HeaderCart:React.FC<ICart> = ({ShopingCart}:ICart) => {
     return (
-    <Link to={"/cart"} style={{textDecoration:"none",color:"black"}}>
-      <Cart>
-        {/* <CartIcon>
-          <img src="C:\Users\SERP-Test1\Downloads\shopping-cart-solid.svg" alt={"cart-icon"} />
-        </CartIcon> */}
-        <h5>No of Products {ShopingCart.length}</h5>
-      </Cart>
-    </Link>
+    // <BrowserRouter>
+        <Link to={"/cart"} style={{textDecoration:"none",color:"black"}}>
+            <Cart>
+                {/* <CartIcon>
+                <img src="C:\Users\SERP-Test1\Downloads\shopping-cart-solid.svg" alt={"cart-icon"} />
+                </CartIcon> */}
+                <h5 data-testid={TextId}>No of Products {ShopingCart.length}</h5>
+            </Cart>
+        </Link>
+    // </BrowserRouter>
     );
 };

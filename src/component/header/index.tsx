@@ -1,1 +1,1 @@
-export { Container, Background, Logo, Cart, CartIcon } from './styled/header'
+export { Container, Background, Logo, Cart, CartIcon } from './Styled/Header'
